@@ -1,0 +1,20 @@
+{
+  "npmScope": "portfolio",
+  "projects": {
+    "portfolio": {
+      "tags": []
+    },
+    "portfolio-e2e": {
+      "tags": []
+    },
+    "layout": {
+      "tags": []
+    },
+    "projects": {
+      "tags": []
+    },
+    "open-source": {
+      "tags": []
+    }
+  }
+}

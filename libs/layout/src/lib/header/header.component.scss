@@ -1,0 +1,64 @@
+@import 'variables.scss';
+
+mat-toolbar {
+  z-index: 1;
+  position: fixed;
+  background: white;
+  color: $main-color;
+  @include box-shadow;
+  .name {
+    flex: 1;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  a {
+    border-bottom: 2px solid transparent;
+    padding: 18px 5px;
+    cursor: pointer;
+    &:hover {
+      border-bottom-color: white;
+    }
+    mat-icon {
+      display: none;
+    }
+    @include lt-md {
+
+    }
+  }
+  .hamburger {
+    outline: 0;
+    color: white;
+    .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
+      background: white;
+    }
+  }
+  mat-toolbar-row.nav-link {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: 200ms ease-in-out all;
+    cursor: pointer;
+    background: $main-color;
+    color: white;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+  @include gt-xs {
+    .hamburger {
+      display: none;
+    }
+  }
+  @include xs {
+    nav {
+      display: none;
+    }
+    .hamburger {
+      padding-bottom: 8px;
+    }
+    mat-toolbar-row.is-active {
+      height: 40px;
+      opacity: 1;
+    }
+  }
+}

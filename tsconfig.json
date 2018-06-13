@@ -18,6 +18,15 @@
     "paths": {
       "@portfolio/*": [
         "libs/*"
+      ],
+      "@portfolio/layout": [
+        "libs/layout/src/index.ts"
+      ],
+      "@portfolio/projects": [
+        "libs/projects/src/index.ts"
+      ],
+      "@portfolio/open-source": [
+        "libs/open-source/src/index.ts"
       ]
     }
   },

@@ -1,0 +1,167 @@
+@import 'variables.scss';
+
+.projects {
+  padding: 15px;
+  a {
+    text-decoration: none;
+    color: $main-color;
+  }
+  .project {
+    // @include xs {
+    display: flex;
+    margin: 15px 0;
+    flex-direction: column;
+    .reverse {
+      @include gt-xs {
+        flex-direction: row-reverse;
+      }
+    }
+    .image-info {
+      display: flex;
+      @include xs {
+        flex-direction: column;
+      }
+      @include gt-xs {
+        flex-direction: row;
+      }
+      .image {
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        @include box-shadow;
+        @include xs {
+          margin: auto;
+          width: 300px;
+          height: 340px;
+        }
+        @include gt-xs {
+          width: 400px;
+          height: 452px;
+        }
+      }
+      .info {
+        flex: 1;
+        padding: 30px;
+        font-size: 24px;
+      }
+    }
+    // }
+    // @include gt-xs {
+    //   width: 570px;
+    //   height: 646px;
+    // }
+    .tags {
+      padding: 10px 0;
+    }
+  }
+}
+h3 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: $main-color;
+  a {
+    color: $main-color;
+    text-decoration: none;
+    &:active, &:hover, &:visited {
+      color: $main-color;
+    }
+  }
+}
+h3::after {
+  display: block;
+  content: ' ';
+  height: 2px;
+  width: 100px;
+  background: $main-color;
+  margin: auto;
+}
+.fcc-projects {
+  height: 500px;
+  overflow: hidden;
+  white-space: nowrap;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .fcc-project {
+    @include xs {
+      width: 300px;
+    }
+    @include gt-xs {
+      width: 450px;
+    }
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    &:hover {
+      .overlay {
+        opacity: 1;
+      }
+    }
+    .overlay {
+      @include xs {
+        opacity: 9;
+      }
+      @include gt-xs {
+        opacity: 0;
+      }
+      transition: 300ms ease-in-out all;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+    }
+    .info {
+      height: 100%;
+      width: 100%;
+      color: white;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      .name {
+        font-weight: bold;
+        font-size: 24px;
+        text-transform: capitalize;
+        display: flex;
+        a {
+          margin-left: auto;
+          mat-icon {
+            transition: 50ms ease-in-out all;
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+      .description {
+        flex: 1;
+        white-space: pre-wrap;
+        margin-top: 15px;
+      }
+      .tags {
+        display: flex;
+        flex-flow: wrap;
+      }
+    }
+  }
+}
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: blue;
+  color: white;
+  font-weight: bold;
+  border-radius: 3px;
+  font-size: 14px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

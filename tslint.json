@@ -13,7 +13,6 @@
     },
     "import-blacklist": [
       true,
-      "rxjs",
       "rxjs/Rx"
     ],
     "interface-over-type-literal": true,
@@ -77,7 +76,7 @@
     "component-selector": [
       true,
       "element",
-      "app",
+      ["app", "portfolio", "layout"],
       "kebab-case"
     ],
     "no-output-on-prefix": true,

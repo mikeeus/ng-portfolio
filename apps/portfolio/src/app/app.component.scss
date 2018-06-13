@@ -1,0 +1,22 @@
+@import 'variables.scss';
+
+#container {
+  padding-top: 64px;
+  box-sizing: border-box;
+  section {
+    max-width: 1120px;
+    margin: auto;
+  }
+  h2 {
+    font-size: 36px;
+    padding-left: 15px;
+    &::after {
+      display: block;
+      content: ' ';
+      height: 2px;
+      width: 80px;
+      background: $grey8;
+      // margin: auto;
+    }
+  }
+}
