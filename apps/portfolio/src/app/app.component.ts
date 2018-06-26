@@ -39,29 +39,20 @@ import { DomSanitizer } from '@angular/platform-browser';
       <section id="open-source">
         <h2>Open Source</h2>
         <portfolio-github></portfolio-github>
-        <div class="open-source">
-          <div class="lucky-migrator">
-            <h3>Lucky Migrator</h3>
-            <div class="image"></div>
-            <div class="info">
-            
-            </div>
-          </div>
-          <div class="lucky-record">
-            <h3>Lucky Record</h3>
-            <div class="image"></div>
-            <div class="info">
-            
-            </div>
-          </div>
-        </div>
       </section>
       
       <section id="contact">
         <h2>Contact</h2>
+        <portfolio-contact-form></portfolio-contact-form>
       </section>
 
-      <div class="scrollTop" [ngx-scroll-to]="'#top'">TOP</div>
+      <footer>
+        <div>Designed and built with love by Mikias Abera</div>
+        <div class="social">
+          <a href="https://www.linkedin.com/in/mikeeus">linkedin</a>
+          <a href="https://www.github.com/mikeeus">Github</a>
+        </div>
+      </footer>
     </div>
   `,
   styleUrls: ['./app.component.scss']
@@ -93,7 +84,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.registerIcons();
-    this.scrollTo('#top');
+    // this.scrollTo('#top');
   }
 
   registerIcons() {

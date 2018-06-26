@@ -121,6 +121,24 @@ $xl_min: 1920px; $xl_max: 5000px;
   background-position: center center;
 }
 
+// Animations
+@mixin gradient($angle, $clr1, $clr2, $clr3, $clr4) {
+	background: linear-gradient($angle, $clr1, $clr2, $clr3, $clr4);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 30s ease infinite;
+	-moz-animation: Gradient 30s ease infinite;
+	animation: Gradient 30s ease infinite;
+}
+
+// Containers
+@mixin fill-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
 // Sizes ---------------------------------------------
 // Header
 $header-height: 64px;

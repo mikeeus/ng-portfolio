@@ -11,7 +11,8 @@ import { Component, OnInit } from '@angular/core';
       </div>
       <div class="fakeScreen">
         <p class="line1">> I'm a self taught web developer with 3 years of experience building Angular, Ruby on Rails and Node.js applications.</p>
-        <p class="line2">> I'm always looking for opportunities to learn and grow, so get in touch!</p>
+        <p class="line2">> I'm always looking for opportunities to learn and grow.</p>
+        <p>> So if you've got an interesting project, <a [ngx-scroll-to]="'#contact'">contact me</a> and let's work together!</p>
       </div>
     </div>
   `,

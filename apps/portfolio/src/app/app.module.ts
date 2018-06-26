@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { NxModule } from '@nrwl/nx';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { MatIconModule, MatToolbarModule } from '@angular/material';
+
+import { NxModule } from '@nrwl/nx';
 
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
@@ -22,15 +24,21 @@ import * as fromComponents from './components';
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     BrowserAnimationsModule,
-    NxModule.forRoot(),
     RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    
+    MatIconModule,
+    MatToolbarModule,
+
+    NxModule.forRoot(),
+
     ScrollToModule.forRoot(),
+
     LayoutModule,
     ProjectsModule,
     OpenSourceModule,
-    MatIconModule,
-    MatToolbarModule
   ],
   declarations: [
     AppComponent,

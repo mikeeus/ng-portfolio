@@ -4,6 +4,7 @@
   display: flex;
   max-width: 900px;
   margin: auto;
+  padding-bottom: 100px;
   @include xs {
     flex-direction: column;
     align-items: center;
@@ -51,13 +52,14 @@
       margin: 7px;
     }
     .features {
+      padding-left: 15px;
       a {
         text-decoration: none;
         color: $grey9;
-        font-size: 13px;
+        font-size: 15px;
         display: flex;
         .commit-hash {
-          width: 50px;
+          width: 65px;
         }
       }
     }

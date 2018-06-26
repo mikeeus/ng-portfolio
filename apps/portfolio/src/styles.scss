@@ -55,3 +55,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Arvo', Helvetica, sans-serif;
   font-weight: 800;
 }
+
+body {
+	@include gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+}

@@ -5,12 +5,13 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <div class="container">
       <div class="languages">
-        <mat-icon class="fill-white" svgIcon="javascript"></mat-icon>
+        <mat-icon class="fill-white" svgIcon="typescript"></mat-icon>
         <mat-icon class="fill-white" svgIcon="ruby"></mat-icon>
+        <mat-icon class="fill-white" svgIcon="javascript"></mat-icon>
         <mat-icon svgIcon="crystal"></mat-icon>
         <mat-icon class="fill-white" svgIcon="sass"></mat-icon>
-        <mat-icon class="fill-white" svgIcon="html5"></mat-icon>
-      </div>
+        </div>
+        <!-- <mat-icon class="fill-white" svgIcon="html5"></mat-icon> -->
 
       <div class="tools">
         <mat-icon class="fill-white" svgIcon="angular"></mat-icon>
