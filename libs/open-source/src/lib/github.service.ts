@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { tap, map, filter } from 'rxjs/operators';
+
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +11,10 @@ export class GithubService {
 
   constructor(private http: HttpClient) { }
 
-  getContributions(repoOwner: string, repo: string) {
+  getContributions(repoOwner: string, repo: string): 
+    Observable<GithubContributorStats> {
     return this.http.get(this.makeUrl(repoOwner, repo)).pipe(
-      map((res: any[]) =>
+      map((res: any[]) => 
         res.filter((c: any) => c['author']['login'] === 'mikeeus')[0]
       ),
       map((mik: GithubContributorResponse) => {
@@ -22,13 +25,14 @@ export class GithubService {
           deletions += x.d;
         })
         return {
+          repo,
+          repoOwner,
           total: mik.total,
-          additions: additions,
-          deletions: deletions,
+          additions,
+          deletions,
           author: mik.author
         }
-      }),
-      tap(res => console.log('res: ', res))
+      })
     );
   }
 
@@ -48,9 +52,16 @@ export interface GithubContributorResponse {
   author: any
 }
 
-export interface GithubContributor {
-  total: number,
-  additions: number,
-  deletions: number,
-  author: any
+export interface GithubContributorStats {
+  repo: string;
+  repoOwner: string;
+  total: number;
+  additions: number;
+  deletions: number;
+  author: any;
+}
+
+export interface GithubContributor{
+  stats: GithubContributorStats;
+  features: { commit: string, desc: string }[];
 }

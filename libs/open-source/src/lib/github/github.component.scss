@@ -1,8 +1,65 @@
+@import 'variables.scss';
+
 .container {
-  .image {
-    height: 100px;
-    width: 100px;
-    background-size: cover;
-    background-position: center;
+  display: flex;
+  max-width: 900px;
+  margin: auto;
+  @include xs {
+    flex-direction: column;
+    align-items: center;
+  }
+  @include gt-xs {
+    justify-content: space-around;
+  }
+}
+.contribution {
+  @include xs {
+    width: 95%;
+    max-width: 400px;
+    margin-bottom: 15px;
+  }
+  @include gt-xs {
+    width: 400px;
+    margin-right: 15px;
+  }
+  // border: 2px solid white;
+  background: white;
+  color: $grey9;
+  border-radius: 4px;
+  @include box-shadow;
+  h3 {
+    margin: 5px;
+    font-size: 13px;
+    font-weight: 400;
+    small {
+      color: $grey5;
+      font-size: 10px;
+    }
+  }
+  .stats {
+    display: flex;
+    font-size: 13px;
+    justify-content: space-between;
+    margin: 0px 7px;
+  }
+  .info {
+    display: flex;
+    align-items: center;
+    img {
+      height: 65px;
+      width: 65px;
+      margin: 7px;
+    }
+    .features {
+      a {
+        text-decoration: none;
+        color: $grey9;
+        font-size: 13px;
+        display: flex;
+        .commit-hash {
+          width: 50px;
+        }
+      }
+    }
   }
 }

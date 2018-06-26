@@ -114,6 +114,13 @@ $xl_min: 1920px; $xl_max: 5000px;
   box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.7);
 }
 
+// Images
+@mixin image-background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 // Sizes ---------------------------------------------
 // Header
 $header-height: 64px;

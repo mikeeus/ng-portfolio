@@ -52,10 +52,6 @@ export class HeaderComponent implements OnInit {
       label: 'Open Source'
     },
     {
-      target: '#skills',
-      label: 'Skills'
-    },
-    {
       target: '#contact',
       label: 'Contact'
     }
