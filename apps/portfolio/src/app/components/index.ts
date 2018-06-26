@@ -1,7 +1,9 @@
 import { FakeTerminalComponent } from './fake-terminal/fake-terminal.component';
+import { LanguagesComponent } from './languages/languages.component';
 
 export const components = [
-  FakeTerminalComponent
+  FakeTerminalComponent,
+  LanguagesComponent
 ]
 
-export { FakeTerminalComponent }
+export { FakeTerminalComponent, LanguagesComponent }

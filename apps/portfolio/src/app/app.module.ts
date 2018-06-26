@@ -18,7 +18,6 @@ import { AppComponent } from './app.component';
 // Components
 import * as fromComponents from './components';
 
-
 @NgModule({
   imports: [
     BrowserModule,

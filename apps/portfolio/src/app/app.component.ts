@@ -24,6 +24,8 @@ import { DomSanitizer } from '@angular/platform-browser';
             <mat-icon svgIcon="linkedin"></mat-icon>
           </a>
         </div>
+
+        <portfolio-languages></portfolio-languages>
       </div>
     </div>
 
@@ -54,10 +56,6 @@ import { DomSanitizer } from '@angular/platform-browser';
           </div>
         </div>
       </section>
-
-      <section id="skills">
-        <h2>Skills</h2>
-      </section>
       
       <section id="contact">
         <h2>Contact</h2>
@@ -73,6 +71,18 @@ export class AppComponent implements OnInit {
   icons = [
     { key: 'github', filename: 'github' },
     { key: 'linkedin', filename: 'linkedin' },
+    { key: 'angular', filename: 'angular' },
+    { key: 'git', filename: 'git' },
+    { key: 'rails', filename: 'rails' },
+    { key: 'ruby', filename: 'ruby' },
+    { key: 'typescript', filename: 'typescript' },
+    { key: 'javascript', filename: 'javascript' },
+    { key: 'heroku', filename: 'heroku' },
+    { key: 'nodejs', filename: 'nodejs' },
+    { key: 'sass', filename: 'sass' },
+    { key: 'postgresql', filename: 'postgresql' },
+    { key: 'crystal', filename: 'crystal' },
+    { key: 'html5', filename: 'html5' }
   ]
 
   constructor(

@@ -44,9 +44,10 @@
 }
 
 #splash {
-	width: 100wh;
-	height: 90vh;
+	height: 95vh;
+	min-height: 650px;
 	color: #fff;
+	position: relative;
 	.gradient {
 		@include fill-wrapper;
 		@include gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
@@ -59,6 +60,11 @@
 		justify-content: center;
 		align-items: center;
 		position: relative;
+		h1 {
+			@include xs {
+				margin-top: 65px;
+			}
+		}
 	}
 	.social {
 		margin-top: 15px;
@@ -70,6 +76,8 @@
 		}
 		mat-icon {
 			margin: 0 5px;
+			height: 35px;
+			width: 35px;
 		}
 	}
 }
