@@ -6,11 +6,20 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'portfolio-root',
   template: `
+    <div id="top"></div>
     <portfolio-header (scrollTo)="scrollTo($event)"></portfolio-header>
 
     <div id="splash">
-      <mat-icon svgIcon="github"></mat-icon>
-      <mat-icon svgIcon="linkedin"></mat-icon>
+      <h1>Mikias Abera</h1>
+      <p>I'm self-taught web developer with 3 years of experience building Angular and Ruby on Rails web apps.</p>
+      <div class="social">
+        <a href="https://github.com/mikeeus">
+          <mat-icon svgIcon="github"></mat-icon>
+        </a>
+        <a href="https://linkedin.com/in/mikeeus">
+          <mat-icon svgIcon="linkedin"></mat-icon>
+        </a>
+      </div>
     </div>
 
     <div id="container">
@@ -49,7 +58,7 @@ import { DomSanitizer } from '@angular/platform-browser';
         <h2>Contact</h2>
       </section>
 
-      <div class="scrollTop" [ngx-scroll-to]="'#container'">TOP</div>
+      <div class="scrollTop" [ngx-scroll-to]="'#top'">TOP</div>
     </div>
   `,
   styleUrls: ['./app.component.scss']
@@ -69,6 +78,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.registerIcons();
+    this.scrollTo('#top');
   }
 
   registerIcons() {
@@ -81,6 +91,6 @@ export class AppComponent implements OnInit {
   }
 
   scrollTo(target) {
-    this.scrollToService.scrollTo({ target: target, offset: 64 })
+    this.scrollToService.scrollTo({ target: target, offset: -64 })
   }
 }

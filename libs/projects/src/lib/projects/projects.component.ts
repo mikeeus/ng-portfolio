@@ -71,7 +71,7 @@ export class ProjectsComponent implements OnInit {
       description:
         'Spotini helps people find events and new places near them. The blog is already online with tons of great articles focused on Warsaw, the website once online will work alongside the blog to provide a comprehensive guide to enjoying your time in the city.',
       github: null,
-      tags: ['Angular 2+', 'Ruby on Rails', 'Postgresql', 'Heroku', 'Netlify'],
+      tags: ['Angular 2+', 'ngrx', 'Ruby on Rails', 'Postgresql', 'Heroku', 'Netlify'],
       flexDirection: 'row'
     },
     {

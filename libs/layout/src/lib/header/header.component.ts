@@ -6,7 +6,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
     <mat-toolbar>
       <mat-toolbar-row>
         <div class="name"
-          (click)="scrollTo.emit('#container')">
+          (click)="scrollTo.emit('#top')">
           Mikias Abera
         </div>
     
