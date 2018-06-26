@@ -15,6 +15,10 @@ import { OpenSourceModule } from '@portfolio/open-source';
 
 import { AppComponent } from './app.component';
 
+// Components
+import * as fromComponents from './components';
+
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -29,7 +33,10 @@ import { AppComponent } from './app.component';
     MatIconModule,
     MatToolbarModule
   ],
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    ...fromComponents.components
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

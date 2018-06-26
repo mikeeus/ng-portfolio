@@ -10,15 +10,20 @@ import { DomSanitizer } from '@angular/platform-browser';
     <portfolio-header (scrollTo)="scrollTo($event)"></portfolio-header>
 
     <div id="splash">
-      <h1>Mikias Abera</h1>
-      <p>I'm self-taught web developer with 3 years of experience building Angular and Ruby on Rails web apps.</p>
-      <div class="social">
-        <a href="https://github.com/mikeeus">
-          <mat-icon svgIcon="github"></mat-icon>
-        </a>
-        <a href="https://linkedin.com/in/mikeeus">
-          <mat-icon svgIcon="linkedin"></mat-icon>
-        </a>
+      <div class="gradient"></div>
+      <div class="content">
+        <h1>Mikias Abera</h1>
+  
+        <portfolio-fake-terminal></portfolio-fake-terminal>
+  
+        <div class="social">
+          <a href="https://github.com/mikeeus">
+            <mat-icon svgIcon="github"></mat-icon>
+          </a>
+          <a href="https://linkedin.com/in/mikeeus">
+            <mat-icon svgIcon="linkedin"></mat-icon>
+          </a>
+        </div>
       </div>
     </div>
 

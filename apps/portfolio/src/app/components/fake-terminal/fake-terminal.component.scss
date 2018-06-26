@@ -1,0 +1,233 @@
+@import 'variables.scss';
+
+// body {
+//   background-color: #272727;
+//   padding: 10px;
+// }
+
+.fakeButtons {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  position: relative;
+  top: 6px;
+  left: 6px;
+  background-color: #ff3b47;
+  border-color: #9d252b;
+  display: inline-block;
+}
+
+.fakeMinimize {
+  left: 11px;
+  background-color: #ffc100;
+  border-color: #9d802c;
+}
+
+.fakeZoom {
+  left: 16px;
+  background-color: #00d742;
+  border-color: #049931;
+}
+
+.fakeMenu {
+  @include xs {
+    width: 300px;
+  }
+  @include gt-xs {
+    width: 450px;
+  }
+  box-sizing: border-box;
+  height: 25px;
+  background-color: #bbb;
+  margin: 0 auto;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.fakeScreen {
+  @include xs {
+    width: 300px;
+    padding: 10px;    
+  }
+  @include gt-xs {
+    width: 450px;
+    padding: 20px;
+    p {
+      margin: 30px 0;
+    }
+  }
+  background-color: #151515;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  p {
+    text-align: left;
+    font-size: 1.25em;
+    font-family: monospace;
+    margin-left: 1em;
+  }
+}
+
+// p {
+//   position: relative;
+//   left: 50%;
+//   margin-left: -8.5em;
+//   text-align: left;
+//   font-size: 1.25em;
+//   font-family: monospace;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   width: 0;
+// }
+
+span {
+  color: #fff;
+  font-weight: bold;
+}
+
+@mixin blink($startSec, $times, $direction) {
+  -webkit-animation: blink 1s $startSec $times $direction;
+  -moz-animation: blink 1s $startSec $times $direction;
+  -o-animation: blink 1s $startSec $times $direction;
+  animation: blink 1s $startSec $times $direction;
+}
+
+@mixin animateSteps($startSec, $num, $direction) {
+  -webkit-animation: type .5s $startSec steps($num, end) $direction;
+  -moz-animation: type .5s $startSec steps($num, end) $direction;
+  -o-animation: type .5s $startSec steps($num, end) $direction;
+  animation: type .5s $startSec steps($num, end) $direction;
+}
+// .line1 {
+//   color: #9CD9F0;
+//   @include animateSteps(1s, 20, forwards);
+// }
+
+// .cursor1 {
+//   @include blink(2s, 2, forwards);
+// }
+
+// .line2 {
+//   color: #CDEE69;
+//   @include animateSteps(4.25s, 20, forwards);
+// }
+
+// .cursor2 {
+//   @include blink(5.25s, 2, forwards);
+// }
+
+// .line3 {
+//   color: #E09690;
+//   @include animateSteps(7.5s, 20, forwards);  
+// }
+
+// .cursor3 {
+//   @include blink(8.5s, 2, forwards);
+// }
+
+// .line4 {
+//   color: #fff;
+//   @include animateSteps(10.75s, 20, forwards);  
+// }
+
+// .cursor4 {
+//   @include blink(11.5s, 2, forwards);  
+// }
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes type {
+  to {
+    width: 17em;
+  }
+}
+
+@-moz-keyframes type {
+  to {
+    width: 17em;
+  }
+}
+
+@-o-keyframes type {
+  to {
+    width: 17em;
+  }
+}
+
+@keyframes type {
+  to {
+    width: 17em;
+  }
+}

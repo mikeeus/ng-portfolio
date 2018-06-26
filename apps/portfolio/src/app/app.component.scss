@@ -35,23 +35,42 @@
 	animation: Gradient 30s ease infinite;
 }
 
+@mixin fill-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
 #splash {
 	width: 100wh;
 	height: 90vh;
 	color: #fff;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	@include gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-	a {
-		color: white;
-		&:visited, &:active {
-			color: white;
-		}
+	.gradient {
+		@include fill-wrapper;
+		@include gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
 	}
-	mat-icon {
-		margin: 0 5px;
+	.content {
+		@include fill-wrapper;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+	}
+	.social {
+		margin-top: 15px;
+		a {
+			color: white;
+			&:visited, &:active {
+				color: white;
+			}
+		}
+		mat-icon {
+			margin: 0 5px;
+		}
 	}
 }
 
