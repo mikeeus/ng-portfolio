@@ -41,9 +41,7 @@
 		align-items: center;
 		position: relative;
 		h1 {
-			@include xs {
-				margin-top: 65px;
-			}
+			margin-top: 80px;
 		}
 	}
 	.social {
