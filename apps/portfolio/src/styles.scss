@@ -39,12 +39,19 @@ $custom-typography: mat-typography-config(
 @include mat-core($custom-typography);
 
 @import 'variables.scss';
+@import '_stylesheets/fonts.scss';
 @import '_stylesheets/hamburger.scss';
 
 html, body {
   margin: 0;
   width: 100%;
   min-height: 100%;
-  color: $grey8;
+  color: white;
+  background: $grey9;
   font-family: 'Dosis', Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Arvo', Helvetica, sans-serif;
+  font-weight: 800;
 }

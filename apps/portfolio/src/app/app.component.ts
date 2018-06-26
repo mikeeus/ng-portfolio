@@ -8,11 +8,12 @@ import { DomSanitizer } from '@angular/platform-browser';
   template: `
     <portfolio-header (scrollTo)="scrollTo($event)"></portfolio-header>
 
+    <div id="splash">
+      <mat-icon svgIcon="github"></mat-icon>
+      <mat-icon svgIcon="linkedin"></mat-icon>
+    </div>
+
     <div id="container">
-      <section id="splash">
-        <mat-icon svgIcon="github"></mat-icon>
-        <mat-icon svgIcon="linkedin"></mat-icon>
-      </section>
       
       <section id="portfolio">
         <h2>Portfolio</h2>

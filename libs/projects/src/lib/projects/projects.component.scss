@@ -1,21 +1,23 @@
 @import 'variables.scss';
 
 .projects {
-  padding: 15px;
   a {
     text-decoration: none;
-    color: $main-color;
+    color: white;
+  }
+  section {
+    padding: 30px;
+  }
+  section:nth-child(odd) {
+    background: darken($grey9, 3%);
+    .project .image-info {
+      flex-direction: row-reverse;
+    }
   }
   .project {
-    // @include xs {
     display: flex;
     margin: 15px 0;
     flex-direction: column;
-    .reverse {
-      @include gt-xs {
-        flex-direction: row-reverse;
-      }
-    }
     .image-info {
       display: flex;
       @include xs {
@@ -23,6 +25,8 @@
       }
       @include gt-xs {
         flex-direction: row;
+        max-width: 900px;
+        margin: auto;
       }
       .image {
         background-size: cover;
@@ -45,37 +49,42 @@
         font-size: 24px;
       }
     }
-    // }
-    // @include gt-xs {
-    //   width: 570px;
-    //   height: 646px;
-    // }
+    .reverse {
+      @include gt-xs {
+        flex-direction: row-reverse;
+      }
+    }
     .tags {
       padding: 10px 0;
     }
   }
 }
 h3 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
-  color: $main-color;
+  color: white;
   a {
-    color: $main-color;
+    color: white;
     text-decoration: none;
-    &:active, &:hover, &:visited {
-      color: $main-color;
+    border-bottom: 2px solid transparent;
+    &:hover {
+      border-color: white;
+      // &::after {
+      //   display: block;
+      //   content: ' ';
+      //   height: 2px;
+      //   width: 100px;
+      //   background: white;
+      //   margin: auto;
+      // }
     }
   }
 }
-h3::after {
-  display: block;
-  content: ' ';
-  height: 2px;
-  width: 100px;
-  background: $main-color;
-  margin: auto;
+
+#fcc-projects-section {
+  padding: 30px 0;
 }
 .fcc-projects {
   height: 500px;
@@ -157,8 +166,8 @@ h3::after {
 .tag {
   display: inline-block;
   padding: 4px 10px;
-  background: blue;
-  color: white;
+  background: white;
+  color: $grey9;
   font-weight: bold;
   border-radius: 3px;
   font-size: 14px;

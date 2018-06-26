@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'portfolio-projects',
   template: `
     <div class="projects">
-      <div *ngFor="let project of projects"
+      <section *ngFor="let project of projects"
         class="project">
         <h3 class="name">
           <a href="{{project.link}}">
@@ -24,37 +24,39 @@ import { Component, OnInit } from '@angular/core';
             </div>
           </div>
         </div>
-      </div>
+      </section>
     
-      <h3>FreeCodeCamp Projects</h3>
-      <div class="fcc-projects"
-        dragScroll
-        [snap-disabled]="false"
-        [scrollbar-hidden]="true"
-        [drag-scroll-y-disabled]="true">
-        <div *ngFor="let project of fccProjects"
-          class="fcc-project"
-          [ngStyle]="{'background-image': 'url(/assets/images/projects/' + project.name + '.jpg'}">
-          <a class="overlay"
-            href="{{ project.link }}">
-            <div class="info">
-              <div class="name">
-                {{ project.name }}
-                <a class="github"
-                  href="{{ project.github }}">
-                  <mat-icon svgIcon="github"></mat-icon>
-                </a>
-              </div>
-              <div class="description">{{ project.description }}</div>
-              <div class="tags">
-                <div class="tag" *ngFor="let tag of project.tags">
-                  {{ tag }}
+      <section id="fcc-projects-section">
+        <h3>FreeCodeCamp Projects</h3>
+        <div class="fcc-projects"
+          dragScroll
+          [snap-disabled]="false"
+          [scrollbar-hidden]="true"
+          [drag-scroll-y-disabled]="true">
+          <div *ngFor="let project of fccProjects"
+            class="fcc-project"
+            [ngStyle]="{'background-image': 'url(/assets/images/projects/' + project.name + '.jpg'}">
+            <a class="overlay"
+              href="{{ project.link }}">
+              <div class="info">
+                <div class="name">
+                  {{ project.name }}
+                  <a class="github"
+                    href="{{ project.github }}">
+                    <mat-icon svgIcon="github"></mat-icon>
+                  </a>
+                </div>
+                <div class="description">{{ project.description }}</div>
+                <div class="tags">
+                  <div class="tag" *ngFor="let tag of project.tags">
+                    {{ tag }}
+                  </div>
                 </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   `,
   styleUrls: ['./projects.component.scss']

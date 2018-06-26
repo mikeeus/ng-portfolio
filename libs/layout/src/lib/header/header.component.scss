@@ -3,13 +3,14 @@
 mat-toolbar {
   z-index: 1;
   position: fixed;
-  background: white;
-  color: $main-color;
+  background: darken($grey9, 5%);
+  color: white;
   @include box-shadow;
   .name {
     flex: 1;
     font-weight: bold;
     cursor: pointer;
+    font-family: 'Arvo', serif;
   }
   a {
     border-bottom: 2px solid transparent;
