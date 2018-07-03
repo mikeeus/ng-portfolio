@@ -20,14 +20,18 @@ import { AppComponent } from './app.component';
 // Components
 import * as fromComponents from './components';
 import * as fromContainers from './containers';
+
+// State
+import * as fromRoot from './+state';
+import { RouterStateSerializer } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { portfolioReducer, initialState as portfolioInitialState } from './+state/portfolio.reducer';
-import { PortfolioEffects } from './+state/portfolio.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { storeFreeze } from 'ngrx-store-freeze';
+
+import * as fromUtils from './utils';
 
 @NgModule({
   imports: [
@@ -58,15 +62,16 @@ import { storeFreeze } from 'ngrx-store-freeze';
     LayoutModule,
     ProjectsModule,
     OpenSourceModule,
+
     StoreModule.forRoot(
-  { portfolio: portfolioReducer },
-  {
-    initialState : { portfolio : portfolioInitialState },
-    metaReducers : !environment.production ? [storeFreeze] : []
-  }
-),
-    EffectsModule.forRoot([PortfolioEffects]),
-    !environment.production ? StoreDevtoolsModule.instrument() : [],
+      { portfolio: fromRoot.portfolioReducer },
+      // {
+      //   initialState : { portfolio : portfolioInitialState },
+      //   metaReducers : !environment.production ? [storeFreeze] : []
+      // }
+    ),
+    EffectsModule.forRoot([fromRoot.PortfolioEffects]),
+    // !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreRouterConnectingModule,
   ],
   declarations: [
@@ -75,6 +80,9 @@ import { storeFreeze } from 'ngrx-store-freeze';
     ...fromComponents.components
   ],
   bootstrap: [AppComponent],
-  providers: [PortfolioEffects]
+  providers: [
+    fromRoot.PortfolioEffects,
+    { provide: RouterStateSerializer, useClass: fromUtils.CustomSerializer }
+  ]
 })
 export class AppModule {}
