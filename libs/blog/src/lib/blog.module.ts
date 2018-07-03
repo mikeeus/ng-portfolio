@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material';
 
 // App Modules
 import { LayoutModule } from '@portfolio/layout';
@@ -17,10 +18,10 @@ import * as fromFeature from './+state';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-
 @NgModule({
   imports: [
     CommonModule,
+    MatIconModule,
 
     LayoutModule,
 
@@ -42,7 +43,8 @@ import { EffectsModule } from '@ngrx/effects';
     EffectsModule.forFeature([fromFeature.BlogEffects])
   ],
   declarations: [
-    ...fromContainers.containers
+    ...fromContainers.containers,
+    ...fromComponents.components
   ]
 })
 export class BlogModule {}
