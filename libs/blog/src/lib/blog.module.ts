@@ -5,8 +5,11 @@ import { RouterModule } from '@angular/router';
 // App Modules
 import { LayoutModule } from '@portfolio/layout';
 
-// import * as fromComponents from './components';
+// Containers
 import * as fromContainers from './containers';
+// Components
+import * as fromComponents from './components';
+// Guards
 // import * as fromGuards from './guards';
 
 // State
