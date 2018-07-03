@@ -23,6 +23,7 @@ export const initialState: BlogData = {
   posts: {
     data: [
       new Post({
+        id: 1,
         title: 'JWT Auth in Lucky Api',
         content: testPostContent,
         slug: 'jwt-auth-in-lucky-api',
