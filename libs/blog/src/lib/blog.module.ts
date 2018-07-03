@@ -34,6 +34,10 @@ import { EffectsModule } from '@ngrx/effects';
             path: '',
             component: fromContainers.PostsComponent,
             // canActivate: [fromGuards.PostsGuard]
+          },
+          {
+            path: ':post_id',
+            component: fromContainers.PostsComponent
           }
         ]
       }
