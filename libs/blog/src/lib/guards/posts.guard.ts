@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot } from '@angular/router';
 
 import * as fromFeature from '../+state';
-import { Post } from '../models';
+// import { Post } from '../models';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
@@ -14,11 +14,12 @@ export class PostsGuard implements CanActivate {
 
   constructor(private store: Store<any>) {}
 
-  canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
-    return this.checkStore().pipe(
-      switchMap(() => of(true)),
-      catchError(() => of(false))
-    );
+  canActivate(_route: ActivatedRouteSnapshot): Observable<boolean> {
+    return of(true);
+    // return this.checkStore().pipe(
+    //   switchMap(() => of(true)),
+    //   catchError(() => of(false))
+    // );
   }
 
   checkStore(): Observable<boolean> {
