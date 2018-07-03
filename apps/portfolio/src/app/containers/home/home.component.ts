@@ -72,6 +72,10 @@ export class HomeComponent implements OnInit {
     {
       target: '#contact',
       label: 'Contact'
+    },
+    {
+      link: '/blog',
+      label: 'Blog'
     }
   ];
 
