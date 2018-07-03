@@ -37,7 +37,7 @@ import { EffectsModule } from '@ngrx/effects';
           },
           {
             path: ':post_id',
-            component: fromContainers.PostsComponent
+            component: fromContainers.PostComponent
           }
         ]
       }

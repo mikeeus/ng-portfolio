@@ -8,3 +8,7 @@ export const getPosts = createSelector(
   (state) => state && state.posts
 );
 
+export const getViewedPost = createSelector(
+  getPosts,
+  (posts) => posts.data.filter(p => p.id === 1)[0]
+);
