@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'portfolio-header',
@@ -6,14 +6,22 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
     <mat-toolbar>
       <mat-toolbar-row>
         <div class="name"
-          (click)="scrollTo.emit('#top')">
+          (click)="selectLink.emit('#top')">
           Mikias Abera
         </div>
     
         <nav>
-          <a *ngFor="let navLink of navLinks" (click)="scrollTo.emit(navLink.target)">
-            {{ navLink.label }}
-          </a>
+          <ng-container *ngFor="let navLink of navLinks">
+            <a *ngIf="navLink.target" (click)="selectLink.emit(navLink.target)">
+              {{ navLink.label }}
+            </a>
+
+            <a *ngIf="navLink.link"
+              routerLink="navLink.link"
+              routerLinkActive="active">
+              {{ navLink.label }}
+            </a>
+          </ng-container>
         </nav>
     
         <button class="hamburger hamburger--collapse" type="button"
@@ -28,7 +36,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
       <mat-toolbar-row
         *ngFor="let navLink of navLinks"
         [ngClass]="{'is-active': menuOpen}"
-        class="nav-link" (click)="scrollTo.emit(navLink.target)"
+        class="nav-link" (click)="selectLink.emit(navLink.target)"
         (click)="menuOpen = false">
         {{ navLink.label }}
       </mat-toolbar-row>
@@ -38,24 +46,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Output() scrollTo = new EventEmitter<string>();
+  @Input() navLinks: { target?: string, label: string };
+  @Output() selectLink = new EventEmitter<string>();
 
   menuOpen = false;
-
-  navLinks = [
-    {
-      target: '#portfolio',
-      label: 'Portfolio'
-    },
-    {
-      target: '#open-source',
-      label: 'Open Source'
-    },
-    {
-      target: '#contact',
-      label: 'Contact'
-    }
-  ];
 
   constructor() {}
 

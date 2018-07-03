@@ -6,7 +6,10 @@ import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
   template: `
     <div class="container">
       <div id="top"></div>
-      <portfolio-header (scrollTo)="scrollTo($event)"></portfolio-header>
+      <portfolio-header
+        [navLinks]="navLinks"
+        (selectLink)="scrollTo($event)">
+      </portfolio-header>
   
       <div id="splash">
         <div class="gradient"></div>
@@ -57,6 +60,20 @@ import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  navLinks = [
+    {
+      target: '#portfolio',
+      label: 'Portfolio'
+    },
+    {
+      target: '#open-source',
+      label: 'Open Source'
+    },
+    {
+      target: '#contact',
+      label: 'Contact'
+    }
+  ];
 
   constructor(private scrollToService: ScrollToService) { }
 
