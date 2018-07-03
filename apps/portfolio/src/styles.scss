@@ -48,11 +48,11 @@ html, body {
   min-height: 100vh;
   color: white;
   background: $grey9;
-  font-family: 'Dosis', Helvetica, sans-serif;
+  font-family: $fonts-dosis;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Arvo', Helvetica, sans-serif;
+  font-family: $fonts-arvo;
   font-weight: 800;
 }
 
