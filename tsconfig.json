@@ -30,6 +30,9 @@
       ],
       "@portfolio/blog": [
         "libs/blog/src/index.ts"
+      ],
+      "@portfolio/api": [
+        "libs/api/src/index.ts"
       ]
     }
   },
