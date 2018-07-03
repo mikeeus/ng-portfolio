@@ -1,0 +1,11 @@
+@import 'variables.scss';
+
+.container {
+  @include xs {
+    padding-top: 56px;
+  }
+  @include gt-xs {
+    padding-top: 64px;
+  }
+  min-height: 100vh;
+}
