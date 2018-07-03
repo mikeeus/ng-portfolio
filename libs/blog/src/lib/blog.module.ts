@@ -9,6 +9,12 @@ import { LayoutModule } from '@portfolio/layout';
 import * as fromContainers from './containers';
 // import * as fromGuards from './guards';
 
+// State
+import * as fromFeature from './+state';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -27,7 +33,10 @@ import * as fromContainers from './containers';
           }
         ]
       }
-    ])
+    ]),
+  
+    StoreModule.forFeature('blog', fromFeature.blogReducer),
+    EffectsModule.forFeature([fromFeature.BlogEffects])
   ],
   declarations: [
     ...fromContainers.containers
