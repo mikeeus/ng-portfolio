@@ -19,6 +19,9 @@
       "@portfolio/*": [
         "libs/*"
       ],
+      "@portfolio/storeRoot": [
+        "apps/portfolio/src/app/+state/index.ts"
+      ],
       "@portfolio/layout": [
         "libs/layout/src/index.ts"
       ],
