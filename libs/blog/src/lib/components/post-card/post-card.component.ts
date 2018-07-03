@@ -10,10 +10,9 @@ import { Post } from '@portfolio/models';
         <div class="tags">{{ post.tags }}</div>
         <div class="title">{{ post.title }}</div>
         <div class="preview">{{ post.content.slice(0, 100) }}</div>
-        <button
-          routerLink="/blog/{{post.id}}">
+        <a [routerLink]="['/blog/', post.id]">
           Read Article <mat-icon>arrow_forwards</mat-icon>
-        </button>
+        </a>
       </div>
       <div class="secondary">
         <div class="image"

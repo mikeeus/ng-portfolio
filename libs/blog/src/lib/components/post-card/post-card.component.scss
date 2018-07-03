@@ -40,20 +40,22 @@
       color: $grey8;
       padding: 15px 0;
     }
-    button {
-      background: $main-color;
-      padding: 5px 15px;
-      color: white;
-      border: 0;
+    a {
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 150px;
+      line-height: 40px;
+      border: 0;
+      background: $main-color;
+      color: white;
       font-size: 12px;
       font-weight: bold;
       font-family: $fonts-arvo;
+      text-decoration: none;
       cursor: pointer;
       mat-icon {
-        margin-left: 15px;
+        margin-left: 10px;
       }
       &:hover {
         background: darken($main-color, 5%);
