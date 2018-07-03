@@ -8,6 +8,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatIconModule, MatToolbarModule } from '@angular/material';
 
 import { NxModule } from '@nrwl/nx';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
@@ -44,6 +46,8 @@ import * as fromContainers from './containers';
     MatToolbarModule,
 
     NxModule.forRoot(),
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
 
     ScrollToModule.forRoot(),
 
