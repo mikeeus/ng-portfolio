@@ -1,6 +1,6 @@
-import { Action } from '@ngrx/store';
 import { BlogActions, ActionTypes } from './blog.actions';
 import { Post } from '../models';
+import { testPostContent } from './data';
 
 /**
  * Interface for the 'Blog' data used in
@@ -20,7 +20,21 @@ export interface BlogState {
 }
 
 export const initialState: BlogData = {
-  posts: { data: [], loading: false, loaded: false }
+  posts: {
+    data: [
+      new Post({
+        title: 'JWT Auth in Lucky Api',
+        content: testPostContent,
+        slug: 'jwt-auth-in-lucky-api',
+        tags: 'jwt, auth, lucky, crystal, json, api',
+        published_at: new Date(),
+        comment_id: 1,
+        user: { name: 'Mikias', email: 'hello@mikias.net' }
+      })
+    ],
+    loading: false,
+    loaded: false
+  }
 };
 
 export function blogReducer(
