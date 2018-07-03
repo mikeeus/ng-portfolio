@@ -15,12 +15,12 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
             <a *ngIf="navLink.target" (click)="selectLink.emit(navLink.target)">
               {{ navLink.label }}
             </a>
-
+            <!--
             <a *ngIf="navLink.link"
-              routerLink="navLink.link"
+              routerLink="{{ navLink.link }}"
               routerLinkActive="active">
               {{ navLink.label }}
-            </a>
+            </a> -->
           </ng-container>
         </nav>
     

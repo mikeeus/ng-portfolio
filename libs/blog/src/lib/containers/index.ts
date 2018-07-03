@@ -1,7 +1,9 @@
 import { PostsComponent } from './posts/posts.component';
+import { LayoutComponent } from './layout/layout.component';
 
 export const containers = [
-  PostsComponent
+  PostsComponent,
+  LayoutComponent
 ]
 
-export { PostsComponent }
+export { PostsComponent, LayoutComponent }
