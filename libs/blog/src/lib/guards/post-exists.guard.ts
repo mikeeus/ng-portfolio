@@ -10,7 +10,7 @@ import { of } from 'rxjs/observable/of';
 import { tap, map, filter, take, switchMap, catchError } from 'rxjs/operators';
 
 @Injectable()
-export class PostsGuard implements CanActivate {
+export class PostExistsGuard implements CanActivate {
 
   constructor(private store: Store<any>) {}
 
@@ -23,13 +23,9 @@ export class PostsGuard implements CanActivate {
 
   checkStore(): Observable<boolean> {
     return this.store.select(fromFeature.getViewedPost).pipe(
-      tap(posts => {
-        if (!posts || !posts.loaded && !posts.loading) {
-          this.store.dispatch(new fromFeature.LoadPosts);
-        }
-      }),
-      filter(posts => posts && posts.loaded),
-      map(posts => posts.loaded),
+      tap(post => console.log('post: ', post)),
+      filter(post => !!post.data),
+      map(_ => true),
       take(1)
     );
   }

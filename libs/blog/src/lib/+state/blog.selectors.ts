@@ -1,5 +1,6 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { BlogData } from './blog.reducer';
+import * as fromRoot from '@portfolio/storeRoot';
 
 export const getBlogState = createFeatureSelector<BlogData>('blog');
 
@@ -10,5 +11,15 @@ export const getPosts = createSelector(
 
 export const getViewedPost = createSelector(
   getPosts,
-  (posts) => posts.data.filter(p => p.id === 1)[0]
+  fromRoot.getRouterState,
+  (posts, router) => {
+    const post = router.state && posts.data.filter(p =>
+      p.id === +router.state.params.post_id
+    )[0]
+    console.log('posts:', posts);
+    return {
+      ...posts,
+      data: post
+    }
+  }
 );
