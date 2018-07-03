@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { BlogActions, BlogActionTypes } from './blog.actions';
+import { BlogActions, ActionTypes } from './blog.actions';
 import { Post } from '../models';
 
 /**
@@ -8,7 +8,7 @@ import { Post } from '../models';
  *  - blogReducer
  */
 export interface BlogData {
-  posts: { data: Post[], loading: boolean, loaded: false };
+  posts: { data: Post[], loading: boolean, loaded: boolean };
 }
 
 /**
@@ -28,11 +28,39 @@ export function blogReducer(
   action: BlogActions
 ): BlogData {
   switch (action.type) {
-    case BlogActionTypes.BlogAction:
+    case ActionTypes.BlogAction:
       return state;
 
-    case BlogActionTypes.BlogLoaded: {
-      return { ...state, ...action.payload };
+    // POSTS
+    case ActionTypes.LoadPosts: {
+      return {
+        ...state,
+        posts: {
+          ...state.posts,
+          loading: true,
+        }
+      };
+    }
+    case ActionTypes.LoadPostsSuccess: {
+      const posts = action.payload;
+      return {
+        ...state,
+        posts: {
+          data: posts,
+          loading: false,
+          loaded: true
+        }
+      };
+    }
+    case ActionTypes.LoadPostsFail: {
+      return {
+        ...state,
+        posts: {
+          ...state.posts,
+          loading: false,
+          loaded: true
+        }
+      };
     }
 
     default:

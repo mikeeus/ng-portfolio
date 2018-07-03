@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
 import { Post } from '../models';
 
-export enum BlogActionTypes {
+export enum ActionTypes {
   BlogAction = '[Blog] Action',
   LoadBlog = '[Blog] Load Data',
   BlogLoaded = '[Blog] Data Loaded',
@@ -12,27 +12,27 @@ export enum BlogActionTypes {
 }
 
 export class Blog implements Action {
-  readonly type = BlogActionTypes.BlogAction;
+  readonly type = ActionTypes.BlogAction;
 }
 export class LoadBlog implements Action {
-  readonly type = BlogActionTypes.LoadBlog;
+  readonly type = ActionTypes.LoadBlog;
   constructor(public payload: any) {}
 }
 
 export class BlogLoaded implements Action {
-  readonly type = BlogActionTypes.BlogLoaded;
+  readonly type = ActionTypes.BlogLoaded;
   constructor(public payload: any) {}
 }
 
 export class LoadPosts implements Action {
-  readonly type = BlogActionTypes.LoadPosts;
+  readonly type = ActionTypes.LoadPosts;
 }
 export class LoadPostsSuccess implements Action {
-  readonly type = BlogActionTypes.LoadPostsSuccess;
+  readonly type = ActionTypes.LoadPostsSuccess;
   constructor(public payload: Post[]){}
 }
 export class LoadPostsFail implements Action {
-  readonly type = BlogActionTypes.LoadPostsFail;
+  readonly type = ActionTypes.LoadPostsFail;
 }
 
 export type BlogActions = Blog
