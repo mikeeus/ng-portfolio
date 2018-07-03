@@ -1,12 +1,15 @@
 import { Action } from '@ngrx/store';
 import { BlogActions, BlogActionTypes } from './blog.actions';
+import { Post } from '../models';
 
 /**
  * Interface for the 'Blog' data used in
  *  - BlogState, and
  *  - blogReducer
  */
-export interface BlogData {}
+export interface BlogData {
+  posts: Post[];
+}
 
 /**
  * Interface to the part of the Store containing BlogState
@@ -16,7 +19,9 @@ export interface BlogState {
   readonly blog: BlogData;
 }
 
-export const initialState: BlogData = {};
+export const initialState: BlogData = {
+  posts: []
+};
 
 export function blogReducer(
   state = initialState,
