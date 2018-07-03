@@ -11,7 +11,7 @@ import * as fromContainers from './containers';
 // Components
 import * as fromComponents from './components';
 // Guards
-// import * as fromGuards from './guards';
+import * as fromGuards from './guards';
 
 // State
 import * as fromFeature from './+state';
@@ -37,7 +37,8 @@ import { EffectsModule } from '@ngrx/effects';
           },
           {
             path: ':post_id',
-            component: fromContainers.PostComponent
+            component: fromContainers.PostComponent,
+            canActivate: [fromGuards.PostExistsGuard]
           }
         ]
       }
@@ -49,6 +50,9 @@ import { EffectsModule } from '@ngrx/effects';
   declarations: [
     ...fromContainers.containers,
     ...fromComponents.components
+  ],
+  providers: [
+    ...fromGuards.guards
   ]
 })
 export class BlogModule {}
