@@ -27,7 +27,13 @@ import * as fromComponents from './components';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    RouterModule.forRoot([
+      {
+        path: 'blog',
+        loadChildren: '@portfolio/blog/src/lib/blog.module#BlogModule',
+        data: { title: 'Blog' }
+      }
+    ], { initialNavigation: 'enabled' }),
     
     MatIconModule,
     MatToolbarModule,
