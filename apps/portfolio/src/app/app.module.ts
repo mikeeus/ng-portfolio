@@ -23,14 +23,13 @@ import * as fromContainers from './containers';
 
 // State
 import * as fromRoot from './+state';
-import { RouterStateSerializer } from '@ngrx/router-store';
+import { RouterStateSerializer, routerReducer } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { storeFreeze } from 'ngrx-store-freeze';
-
 import * as fromUtils from './utils';
 
 @NgModule({
@@ -64,14 +63,17 @@ import * as fromUtils from './utils';
     OpenSourceModule,
 
     StoreModule.forRoot(
-      { portfolio: fromRoot.portfolioReducer },
+      {
+        portfolio: fromRoot.portfolioReducer,
+        router: routerReducer
+      },
       // {
       //   initialState : { portfolio : portfolioInitialState },
       //   metaReducers : !environment.production ? [storeFreeze] : []
       // }
     ),
     EffectsModule.forRoot([fromRoot.PortfolioEffects]),
-    // !environment.production ? StoreDevtoolsModule.instrument() : [],
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreRouterConnectingModule,
   ],
   declarations: [
