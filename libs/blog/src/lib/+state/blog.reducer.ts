@@ -8,7 +8,7 @@ import { Post } from '../models';
  *  - blogReducer
  */
 export interface BlogData {
-  posts: Post[];
+  posts: { data: Post[], loading: boolean, loaded: false };
 }
 
 /**
@@ -20,7 +20,7 @@ export interface BlogState {
 }
 
 export const initialState: BlogData = {
-  posts: []
+  posts: { data: [], loading: false, loaded: false }
 };
 
 export function blogReducer(
