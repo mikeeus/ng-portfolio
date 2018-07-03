@@ -48,10 +48,12 @@
     "material-design-icons": "^3.0.1",
     "ngrx-store-freeze": "^0.2.1",
     "ngx-drag-scroll": "^1.8.2",
+    "ngx-md": "^6.0.0",
     "rxjs": "6.0.0",
     "rxjs-compat": "6.0.0",
     "viz": "^0.0.1",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "@ngrx/entity": "5.2.0"
   },
   "devDependencies": {
     "@angular/compiler-cli": "6.0.1",
