@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 import * as fromFeature from '../../+state';
-import { Post } from '../../models';
+import { Post } from '@portfolio/models';
 import { Observable } from 'rxjs/Observable';
 
 @Component({

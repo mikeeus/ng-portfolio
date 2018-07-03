@@ -1,5 +1,5 @@
 import { BlogActions, ActionTypes } from './blog.actions';
-import { Post } from '../models';
+import { Post } from '@portfolio/models';
 import { testPostContent } from './data';
 
 /**

@@ -33,6 +33,9 @@
       ],
       "@portfolio/api": [
         "libs/api/src/index.ts"
+      ],
+      "@portfolio/models": [
+        "libs/models/src/index.ts"
       ]
     }
   },
