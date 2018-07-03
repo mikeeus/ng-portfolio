@@ -19,6 +19,7 @@ import { AppComponent } from './app.component';
 
 // Components
 import * as fromComponents from './components';
+import * as fromContainers from './containers';
 
 @NgModule({
   imports: [
@@ -28,6 +29,10 @@ import * as fromComponents from './components';
     FormsModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
+      {
+        path: '',
+        component: fromContainers.HomeComponent
+      },
       {
         path: 'blog',
         loadChildren: '@portfolio/blog/src/lib/blog.module#BlogModule',
@@ -48,6 +53,7 @@ import * as fromComponents from './components';
   ],
   declarations: [
     AppComponent,
+    ...fromContainers.containers,
     ...fromComponents.components
   ],
   bootstrap: [AppComponent]
