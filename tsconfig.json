@@ -27,6 +27,9 @@
       ],
       "@portfolio/open-source": [
         "libs/open-source/src/index.ts"
+      ],
+      "@portfolio/blog": [
+        "libs/blog/src/index.ts"
       ]
     }
   },
