@@ -1,27 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import {
-  blogReducer,
-  initialState as blogInitialState
-} from './+state/blog.reducer';
-import { BlogEffects } from './+state/blog.effects';
+
+// import * as fromComponents from './components';
+import * as fromContainers from './containers';
+// import * as fromGuards from './guards';
+
 @NgModule({
   imports: [
     CommonModule,
 
     RouterModule.forChild([
-      /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
-    ]),
-
-    StoreModule.forFeature('blog', blogReducer, {
-      initialState: blogInitialState
-    }),
-
-    EffectsModule.forFeature([BlogEffects])
+      {
+        path: '',
+        pathMatch: 'full',
+        component: fromContainers.PostsComponent
+      }
+    ])
   ],
-  providers: [BlogEffects]
+  declarations: [
+    ...fromContainers.containers
+  ]
 })
 export class BlogModule {}
