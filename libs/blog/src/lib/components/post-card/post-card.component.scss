@@ -1,10 +1,11 @@
 @import 'variables.scss';
 
 .container {
-  background: white;
+  background: $grey9;
+  background: #212121;
+  color: white;
   margin: auto;
   margin-top: 15px;
-  color: $grey9;
   display: flex;
   @include xs {
     flex-direction: column-reverse;
@@ -37,7 +38,7 @@
     }
     .preview {
       font-size: 13px;
-      color: $grey8;
+      color: $grey0;
       padding: 15px 0;
     }
     a {
